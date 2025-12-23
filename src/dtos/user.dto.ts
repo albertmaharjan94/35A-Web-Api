@@ -1,7 +1,7 @@
 import z from "zod";
 import { UserSchema } from "../types/user.type";
 
-export const createUserDto = UserSchema.pick( // reuse schema
+export const CreateUserDto = UserSchema.pick( // reuse schema
     {
         username: true,
         email: true,
@@ -21,4 +21,4 @@ export const createUserDto = UserSchema.pick( // reuse schema
     }
 );
 
-export type CreateUserDto = z.infer<typeof createUserDto>;
+export type CreateUserDto = z.infer<typeof CreateUserDto>;

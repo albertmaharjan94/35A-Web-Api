@@ -7,7 +7,7 @@ import { connectDatabase } from './database/mongodb';
 dotenv.config();
 // Yo bhanda tala .env chalauna milcha
 console.log(process.env.PORT); 
-
+import authRoutes from './routes/auth.route';
 import bookRoutes from './routes/book.route';
 
 const app: Application = express();
@@ -15,6 +15,7 @@ const app: Application = express();
 
 app.use(bodyParser.json());
 
+app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
 
 async function start(){
