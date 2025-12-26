@@ -9,7 +9,7 @@ dotenv.config();
 console.log(process.env.PORT); 
 import authRoutes from './routes/auth.route';
 import bookRoutes from './routes/book.route';
-
+import adminUserRouter from './routes/admin/user.route';
 const app: Application = express();
 // const PORT: number = 3000;
 
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
-
+app.use('/api/admin/users', adminUserRouter);
 async function start(){
     await connectDatabase();
         
