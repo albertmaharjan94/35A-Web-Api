@@ -21,11 +21,7 @@ export const CreateUserDto = UserSchema.pick( // reuse schema
     }
 );
 
-
 export type CreateUserDto = z.infer<typeof CreateUserDto>;
-
-export const UpdateUserDto = CreateUserDto.partial(); // all optional fields
-export type UpdateUserDto = z.infer<typeof UpdateUserDto>;
 
 // can use UserSchema or make a new schema
 export const LoginUserDto = z.object({
@@ -33,3 +29,7 @@ export const LoginUserDto = z.object({
     password: z.string().min(6),
 });
 export type LoginUserDto = z.infer<typeof LoginUserDto>;
+
+
+export const UpdateUserDto = UserSchema.partial(); // all optional fields
+export type UpdateUserDto = z.infer<typeof UpdateUserDto>;

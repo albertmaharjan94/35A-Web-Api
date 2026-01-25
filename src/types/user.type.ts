@@ -7,5 +7,6 @@ export const UserSchema = z.object({
     firstName: z.string().optional(),
     lastName: z.string().optional(),
     role: z.enum(['admin', 'user']).default('user'),
+    imageUrl: z.string().optional() // add this
 });
 export type UserType = z.infer<typeof UserSchema>;

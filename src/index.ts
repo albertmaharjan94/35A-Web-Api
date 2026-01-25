@@ -3,8 +3,9 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import { PORT } from './config';
 import { connectDatabase } from './database/mongodb';
-
 import cors from 'cors';
+
+import path from 'path';
 
 dotenv.config();
 // Yo bhanda tala .env chalauna milcha
@@ -21,6 +22,8 @@ let corsOptions = {
 }
 // origin: "*",  // yo le sabai url lai access dincha
 app.use(cors(corsOptions));
+
+app.use('/uploads', express.static(path.join(__dirname, '../uploads'))); // static file serving
 
 // const PORT: number = 3000;
 
