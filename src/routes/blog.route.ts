@@ -13,7 +13,7 @@ router.post(
 
 router.get(
     "/",
-    blogController.getBlogs
+    blogController.getAllBlogs
 )
 
 export default router;

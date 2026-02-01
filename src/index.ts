@@ -14,6 +14,7 @@ import authRoutes from './routes/auth.route';
 import bookRoutes from './routes/book.route';
 import adminUserRouter from './routes/admin/user.route';
 import blogRouter from './routes/blog.route';
+import adminBlogRouter from './routes/admin/blog.route';
 
 const app: Application = express();
 
@@ -35,6 +36,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
 app.use('/api/admin/users', adminUserRouter);
 app.use('/api/blogs', blogRouter);
+app.use('/api/admin/blogs', adminBlogRouter);
 
 async function start(){
     await connectDatabase();
