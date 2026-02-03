@@ -10,3 +10,14 @@ export async function connectDatabase() {
         process.exit(1); // exit application on exception
     }
 }
+
+
+// export async function connectTestDatabase() {
+//     try {
+//         await mongoose.connect(MONGODB_URI_TEST);
+//         console.log("Database connected successfully");
+//     } catch (error) {
+//         console.error("Database Error:", error);
+//         process.exit(1); // exit application on exception
+//     }
+// }
